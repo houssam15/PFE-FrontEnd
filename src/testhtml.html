@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="database-type">Type de base de données:</label>
+<select id="database-type" name="database-type">
+  <option value="mysql">MySQL</option>
+  <option value="mongodb">MongoDB</option>
+  <option value="postgresql">PostgreSQL</option>
+</select>
+
+<div id="mongodb-link" style="display:none;">
+  <label for="mongo-link">Lien MongoDB:</label>
+  <input type="text" id="mongo-link" name="mongo-link">
+</div>
+
+<div id="username-password">
+  <label for="username">Nom d'utilisateur:</label>
+  <input type="text" id="username" name="username">
+
+  <label for="password">Mot de passe:</label>
+  <input type="password" id="password" name="password">
+</div>
+
+<script>
+  const databaseTypeSelect = document.getElementById("database-type");
+  const mongodbLinkDiv = document.getElementById("mongodb-link");
+  const usernamePasswordDiv = document.getElementById("username-password");
+
+  databaseTypeSelect.addEventListener("change", function() {
+    if (databaseTypeSelect.value === "mongodb") {
+      mongodbLinkDiv.style.display = "block";
+      usernamePasswordDiv.style.display = "none";
+    } else {
+      mongodbLinkDiv.style.display = "none";
+      usernamePasswordDiv.style.display = "block";
+    }
+  });
+</script>
+</body>
+</html>
