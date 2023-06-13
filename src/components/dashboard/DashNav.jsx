@@ -56,7 +56,7 @@ const DashNav = () => {
       );
       if (resOfcount.data.activated == false) {
         const response = await axios({
-          url: "http://localhost:4002/activeAccount",
+          url: "https://server-admin-vf.vercel.app/activeAccount",
           method: "post",
           data: {
             amount: product.price * 100,
