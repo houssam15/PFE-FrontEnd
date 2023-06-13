@@ -230,7 +230,7 @@ export const cards = async (email) => {
 
 
 export const demandeProlongement = async (demande,user) =>{
-  let query = `https://server-admin-vf.vercel.app/demandeDeProlongation`;
+  let query = `http://localhost:4002/demandeDeProlongation`;
   const response = await axios.post(query,{demande,user});
   if (response) {
     return response;
