@@ -72,7 +72,7 @@ const LoginPage = () => {
                   {/* Form  */}
                   <div className=" flex flex-col w-full px-4 py-6 flex-1">
                     <div className="font-bold text-4xl text-left pl-1">
-                      AliDanTeK
+                      AliDanTek
                     </div>
                     <form
                       onSubmit={connect}
