@@ -56,7 +56,7 @@ const DashNav = () => {
       );
       if (resOfcount.data.activated == false) {
         const response = await axios({
-          url: "http://localhost:4002/activeAccount",
+          url: "https://server-admin-vf.vercel.app/activeAccount",
           method: "post",
           data: {
             amount: product.price * 100,
@@ -65,8 +65,14 @@ const DashNav = () => {
           },
         });
         if (response.status === 200) {
-          handleSucces();
-          setTimeout(()=>signout(),3000)
+          const response = await axios.post("http://localhost:4001/activer",{reponse:JSON.parse(window.sessionStorage.getItem("user"))})
+          if(response.data.success==true){
+            handleSucces();
+            setTimeout(()=>signout(),3000)
+          }else{
+            handleFailed();
+          }
+         
         }
       } else if (resOfcount.data.activated == true) {
         handleActivated();

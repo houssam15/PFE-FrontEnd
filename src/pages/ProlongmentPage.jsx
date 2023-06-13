@@ -66,7 +66,7 @@ function Prolongment(){
     const payNow = async token => {
         try{
             const response = await axios({
-                url:"http://localhost:4002/payement",
+                url:"https://server-admin-vf.vercel.app/payement",
                 method:'post',
                 data: {
                     amount : product.price*100,
@@ -75,7 +75,12 @@ function Prolongment(){
                 }
                 })
             if(response.status===200){
+              const response = await axios.post("http://localhost:4001/renialiser",{reponse:JSON.parse(window.sessionStorage.getItem("user"))})
+              if(response.data.success==true){
                 handleSuccess()
+              }else{
+                handleFailure()
+              }
             }
             // if(res.data.suppression==1000){
 
@@ -87,7 +92,6 @@ function Prolongment(){
             // }
             
         }catch(err){
-            handleFailure()
             console.log(err)
         }
     }
