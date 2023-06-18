@@ -92,7 +92,7 @@ const DashNav = () => {
     >
       <div className="ml-20">
         <h1 className="no-underline m-0 text-2xl font-bold">
-          Welcome {user.username}{" "}
+          WELCOME {user.username}{" "}
           {JSON.parse(window.sessionStorage.getItem("user")).activated ===
           false ? (
             <>
