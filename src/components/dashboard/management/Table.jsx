@@ -273,7 +273,7 @@ const Table = () => {
               <table className="w-full text-sm text-left " key={elm.sheetName}>
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 ">
                   <tr className="border border-black text-center">
-                    {elm.schema.reverse()
+                    {elm.schema
                       .filter((e) => e != "_id")
                       .map((el) => (
                         <th
